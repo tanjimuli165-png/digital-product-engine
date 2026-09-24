@@ -1,0 +1,16 @@
+name: Extract zip
+on:
+  workflow_dispatch:
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Unzip
+        run: |
+          unzip -o digital-product-engine-backup*.zip -d .
+          rm -f digital-product-engine-backup*.zip
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Extract app files"
