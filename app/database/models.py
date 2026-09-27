@@ -70,5 +70,6 @@ class Report(BaseModel):
     marketplace_gaps: List[MarketplaceGap] = Field(default_factory=list)
     product_blueprint: Dict[str, Any] = Field(default_factory=dict)
     launch_kit: Dict[str, Any] = Field(default_factory=dict)
+    generated_products: List[Dict[str, Any]] = Field(default_factory=list)
     executive_summary: str = ""
     collection_notes: List[str] = Field(default_factory=list)
